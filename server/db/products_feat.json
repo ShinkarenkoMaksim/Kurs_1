@@ -1,0 +1,50 @@
+[
+  {
+    "id_product": 130,
+    "product_name": "MRCYC - Long-Sleeve Crewneck T-Shirt",
+    "price": 78,
+    "img": "img/feat_1.jpg"
+  },
+  {
+    "id_product": 131,
+    "product_name": "Shopherd - Spaghetti-Strap Slit Dress",
+    "price": 45,
+    "img":  "img/feat_2.jpg"
+  },
+  {
+    "id_product": 132,
+    "product_name": "Aozora - Shawl-Collar Cardigan",
+    "price": 94,
+    "img":  "img/feat_3.jpg"
+  },
+  {
+    "id_product": 133,
+    "product_name": "BBChic - Strappy Sheath Knit Dress",
+    "price": 67,
+    "img":  "img/feat_4.jpg"
+  },
+  {
+    "id_product": 134,
+    "product_name": "Alfie - Lace V-Neck Dress",
+    "price": 39,
+    "img":  "img/feat_5.jpg"
+  },
+  {
+    "id_product": 135,
+    "product_name": "Sheck - Hooded Long Cardigan",
+    "price": 61,
+    "img":  "img/feat_6.jpg"
+  },
+  {
+    "id_product": 136,
+    "product_name": "ZONZO - Cropped Harem Pants",
+    "price": 98,
+    "img":  "img/feat_7.jpg"
+  },
+  {
+    "id_product": 137,
+    "product_name": "Bjorn - Strapped Vest",
+    "price": 76,
+    "img":  "img/feat_8.jpg"
+  }
+]

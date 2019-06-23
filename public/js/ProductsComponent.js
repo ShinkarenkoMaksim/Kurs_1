@@ -4,8 +4,11 @@ Vue.component('products', {
           catalogUrl: `/catalogData.json`,
           products: [],
           filtered: [],
-          imgCatalog: `https://placehold.it/200x150`,
       }
+    },
+    props: {
+        itemsQuantity: 0,
+        catalogPage: true,
     },
     methods: {
         filter(value){
@@ -22,22 +25,29 @@ Vue.component('products', {
                 }
             });
     },
-    template: `<div class="products">
-        <product 
-        v-for="product of filtered" 
-        :key="product.id_product"
-        :product="product"
-        :img="imgCatalog"></product>
-    </div>`
+    template: `<div class="products"><product 
+            v-for="(product, index) of filtered"
+            v-if="index < itemsQuantity" 
+            :key="product.id_product"
+            :product="product">
+                <template v-if="catalogPage">
+                    <a href="#" class="product__round"><img src="img/round.svg" alt="Round"></a>
+                    <a href="#" class="product__hearth"><img src="img/hearth.svg" alt="Round"></a>
+                </template>
+            </product></div>`
 });
 Vue.component('product', {
-    props: ['product', 'img'],
-    template: `<div class="product-item" >
-            <img :src="img" :alt="product.product_name">
-            <div class="desc">
-                <h3>{{product.product_name}}</h3>
-                <p>{{product.price}}</p>
-                <button class="buy-btn" @click="$root.$refs.cart.addProduct(product)">Купить</button>
-            </div>
-        </div>`
-})
+    props: ['product'],
+    template: `<div class="products_item">
+                    <img :src="product.img" :alt="product.product_name">
+                    <h3 class="featured__title">{{product.product_name}}</h3>
+                    <p class="featured__price">\${{product.price}}</p>
+                    <a class="featured__hover" href="single_page.html">
+                        <p class="product__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                    </a>
+                    <a href="#" class="featured__cart" @click.prevent="$root.$refs.cart.addProduct(product)"><img class="featured__cart__img" src="img/cart_white.svg" alt="Cart">Add
+                        to Cart</a>
+                    <slot></slot>
+                </div>`
+});
+
