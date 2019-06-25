@@ -1,5 +1,12 @@
 const app = new Vue({
     el: '#app',
+    components: {
+        products,
+        cart,
+        'search': SearchComp,
+        error,
+        'filter-comp': filterComp,
+    },
     methods: {
         getJson(url){
             return fetch(url)

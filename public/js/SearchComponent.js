@@ -1,4 +1,4 @@
-let SearchComp = {
+const SearchComp = {
     data(){
       return {
           userSearch: '',

@@ -1,10 +1,14 @@
-Vue.component('cart', {
+const cart = {
     data(){
       return {
           cartItems: [],
           amount: 0,
           quantity: 0,
       }
+    },
+    components: {
+        'cart-item': cartItem,
+        'cart-page': cartPage,
     },
     props: {
         page: false,
@@ -167,54 +171,4 @@ Vue.component('cart', {
                         </div>
                     </template>
                 </div>`
-});
-
-Vue.component('cart-item', {
-    props: ['cartItem'],
-    template: `<div class="cart__drop__flex">
-                    <a href="single_page.html" class="cart__item__img"><img :src="cartItem.img" :alt="cartItem.product_name"></a>
-                    <div class="cart__drop__text">
-                        <a href="single_page.html" class="cart__item__name">{{cartItem.product_name}}</a><br>
-                        <img class="cart__drop__star" src="img/cart-stars-temp.png" alt="stars">
-                        <p class="cart__drop__price">{{cartItem.quantity}} <span>x</span> \${{cartItem.price}}</p>
-                    </div>
-                    <a href="#" class="cart__drop__del" @click.prevent="$emit('remove', cartItem)"><i class="fas fa-times-circle"></i></a>
-                </div>`
-});
-
-Vue.component('cart-page', {
-    data(){
-        return{
-            value: this.cartItem.quantity,
-        }
-    },
-    props: ['cartItem'],
-    methods: {
-        changeQuantity() {
-            if (this.value < 1) {
-                this.value = 1;
-            }
-            this.$parent.changeQuantity(this.cartItem, this.value);
-        }
-    },
-    template: `<div class="cart__product">
-                    <div class="cart__col1">
-                        <a href="single_page.html" class="cart__img"><img :src="cartItem.img" :alt="cartItem.product_name"></a>
-                        <div class="cart__descript">
-                            <a href="single_page.html" class="cart__descript__title">{{cartItem.product_name}}</a><br>
-                            <img src="img/cart-stars-temp.png" alt="stars">
-                            <p class="cart__descript__text">Color: <span>Red</span></p>
-                            <p class="cart__descript__text">Size: <span>Xll</span></p>
-                        </div>
-                    </div>
-                    <div class="cart__col2">\${{cartItem.price}}</div>
-                    <div class="cart__col3">
-                        <input class="cart__quant" type="number" v-model="value" @input="changeQuantity">
-                    </div>
-                    <div class="cart__col4">FREE</div>
-                    <div class="cart__col5">\${{cartItem.price*cartItem.quantity}}</div>
-                    <div class="cart__col6">
-                        <a href="#" class="cart__dellink" @click.prevent="$emit('removeAll', cartItem)"><i class="fas fa-times-circle"></i></a>
-                    </div>
-                </div>`
-});
+};
