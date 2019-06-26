@@ -4,10 +4,8 @@ const filterComp = {
             userSearch: ''
         }
     },
-    template: `<form action="#" method="post" class="search-form" @submit.prevent="$parent.$refs.products.filter(userSearch)">
-            <input type="text" class="search-field" v-model="userSearch">
-            <button class="btn-search" type="submit">
-                <i class="fas fa-search"></i>
-            </button>
-        </form>`
+    template: `<form action="#" method="post" @submit.prevent="$parent.$refs.products.filter(userSearch)">
+                    <input class="header__input" type="text" placeholder="Search for Item..." v-model="userSearch">
+                    <button class="header__btn" type="submit"><i class="fas fa-search"></i></button>
+                </form>`
 };

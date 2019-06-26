@@ -29,7 +29,7 @@
                 <a href="index.html" class="logo__link"><img class="logo" src="img/logo.png" alt="logo">
                     <p class="brand">BRAN<span>D</span></p>
                 </a>
-                <form class="header__form" action="#">
+                <div class="header__form">
                     <details class="header__button">
                         <summary class="header__button__text">Browse</summary>
                         <div class="brows__drop">
@@ -63,9 +63,8 @@
                             </ul>
                         </div>
                     </details>
-                    <input class="header__input" type="text" placeholder="Search for Item...">
-                    <button class="header__btn" type="submit"><i class="fas fa-search"></i></button>
-                </form>
+                    <filter-comp class="header__form"></filter-comp>
+                </div>
             </div>
             <div class="header__right">
                 <cart ref="cart" class="cart__container"></cart>
