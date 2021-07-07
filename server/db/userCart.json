@@ -1,0 +1,13 @@
+{
+    "amount": 156,
+    "countGoods": 2,
+    "contents": [
+        {
+            "quantity": 2,
+            "id_product": 110,
+            "product_name": "Porstina Embroidered Zip Jacket",
+            "price": 78,
+            "img": "img/prod-1.jpg"
+        }
+    ]
+}
